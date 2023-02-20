@@ -44,7 +44,7 @@ const MyOrderMaster = () => {
     <PlaceOrder cartHistory={cartHistoryItems} />
     </div>
     <div id="can_order"  className="container tab-pane fade"><br/>
-    <CancelOrder cartHistory={cartHistoryItems}/>
+    {/* <CancelOrder cartHistory={cartHistoryItems}/> */}
     </div>
   </div>
 </div>
