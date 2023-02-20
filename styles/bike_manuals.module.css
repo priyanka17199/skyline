@@ -1,0 +1,98 @@
+.bold {
+  font-weight: 600;
+}
+.grey {
+  color: #666;
+}
+.green {
+  color: #2ab551;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.pageHeading a {
+  color: #000;
+}
+.pageHeading a:hover {
+  color: #000;
+}
+
+.cardFooter {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.cardFooter p {
+  font-size: 12px;
+}
+
+.pdf_list a {
+  color: #000 !important;
+  text-decoration: none;
+  background-color: transparent;
+  text-align: center;
+}
+.pdf_list a:hover {
+  color: #000;
+}
+
+.imgFluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* 
+    .sports_ride .item a img {
+        max-height: 277px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    } */
+
+.item {
+  position: relative;
+  margin-bottom: 25px;
+}
+.black {
+  color: #000;
+}
+
+.box_card .img_btn {
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  position: absolute;
+  /* text-align: center; */
+}
+
+/* .img_btn {
+      
+       position: absolute;
+       top: calc((100% - 35px) / 2);
+       width: 100%;
+       left: 50px;
+       
+    } */
+
+.img_btn span {
+  font-size: 20px;
+  border: 1px solid #fff;
+  padding: 5px 25px;
+  background-color: rgba(254, 254, 254, 0.15);
+  text-shadow: 0 0 20px rgb(0 0 0 / 50%);
+  -webkit-text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: 500;
+}
+.img_btn span:hover {
+  text-shadow: 0 0 20px rgb(0 0 0 / 50%);
+  -webkit-text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.item a {
+  text-decoration: none;
+}

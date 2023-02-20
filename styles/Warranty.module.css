@@ -1,0 +1,64 @@
+.warranty_cont {
+    margin-top: 120px;
+ }
+ .main_heading {
+    font-weight: 800;
+    font-size: 1.25rem;
+ }
+ .page_headings {
+    font-weight: 800;
+    font-size: 1.25rem;
+ }
+ .warranty_item {
+        margin: 0 10px !important;
+    }
+   
+.active {
+        background-color: #ffffff !important;
+        color:#000000 !important;
+        border: 2px solid #ffc700 !important;
+        font-weight: 600;
+    }
+.warranty_link:hover {
+        background-color: #ffc700 !important;
+        color:#000000 !important;
+    }
+
+
+    .warranty_policy {
+        font-size: 0.90em!important;
+        color:#666 !important;
+        line-height: 25px;
+    }
+
+    .buyer_policy_li {
+        font-size: 0.90em!important;
+        color:#666;
+        line-height: 25px;
+    }
+    .buyer_policy_list {
+        font-size: 0.90em!important;
+        color:#666;
+        list-style-type: none;
+        line-height: 25px;
+        
+    }
+    .small_heading  {
+    text-decoration: underline;
+    font-weight: 800;
+    font-size: 16px;
+    }
+    .buyer_policy_ul {
+        padding-left: 3px;
+    }
+    .buyer_policy {
+        margin-top: 160px;
+    }
+    .buyer_policy_ol {
+        padding-left: 12px;
+    }
+    @media (max-width:768px) {
+        .warranty-pills .warranty_item {
+            margin-bottom: 10px;
+        }
+    }

@@ -1,0 +1,28 @@
+.dealerAccountsMainDiv
+{
+    margin-top: 120px;
+}
+
+.trainingManual {
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+.trainingManual:hover{
+    text-decoration: underline;
+}
+
+.midSection {
+    font-size: 14px;
+    font-family: Ubuntu, sans-serif;
+    color: #666666;
+}
+
+.midSection h2{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Ubuntu, sans-serif;
+}
+
+

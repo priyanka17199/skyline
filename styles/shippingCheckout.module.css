@@ -1,0 +1,64 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+* {
+    box-sizing: border-box; 
+}
+.container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+
+  .custom-btn:hover{
+    background:#ffc107 !important;
+  }
+  .red {
+    color:red;
+  }
+  .form-check-label {
+    /* margin-left: 5px; */
+    margin-bottom: -3px !important;
+    /* color:#7f8c8d; */
+    color: #000000;
+    font-size: 12px;
+    /* line-height: 8px; */
+    
+  }
+  textarea {
+    resize: none !important;
+  }
+
+  .form-group .address-checkbox {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .order-summery{
+    margin-bottom: 10px;
+  }
+h2,h3{
+    font-size: 20px !important;
+}
+
+.order-summery p , span {
+    font-size: 14px !important;
+}
+
+p{
+  font-size: 13px !important;
+}
+/* .btn:hover {
+  background: #ffca2c !important;
+} */
+
+.transparent{
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+

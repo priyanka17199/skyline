@@ -1,0 +1,30 @@
+ .brands {
+    /* display: inline-block; */
+    /* transition: 1s ease-in-out; */
+    font-weight: 800;
+    color: #4d4d4d;
+  }
+.brands::after{
+      content: "";
+      background: #555;
+      width: 0;
+      height: 2px;
+      display:block;
+      width: 12px;
+      margin:5px auto;
+     
+  }
+.brand_img {
+  max-width:100% !important;
+  height: auto !important;
+  min-height: 27% !important;
+
+} 
+
+@media(max-width:767px) {
+  .brand-img {
+    width:75% !important;
+margin: 0 auto;
+  }
+}
+ 

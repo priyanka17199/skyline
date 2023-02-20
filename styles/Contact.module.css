@@ -1,0 +1,102 @@
+.aboutus_section {
+    margin-top: 150px;
+}
+.contact_link {
+    text-decoration: none !important;
+    color: #000000 !important;
+}
+
+.contact_link:hover{
+    text-decoration: none;
+    color: #000000 !important;
+}
+
+ .contact_tabs {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+
+}
+
+.active {
+    border: 0 !important;
+    background-color: #ffc700 !important;
+    border-radius: 0px !important;
+}
+.contact_active{
+    padding: 15px 5px;
+}
+
+.contact_tabs .nav-item .nav-link .link-tabs i {
+    font-size: 50px;
+    color: #000;
+}
+.contact_tabs .nav-item .nav-link .link-tabs p {
+    font-size: 20px;
+    color: #000;
+}
+
+.contact_tabs .nav-item a.active .link-tabs i, .contact_tabs .nav-item a.active .link-tabs p {
+    color: #fff;
+}
+
+.card_contact {
+    border: 1px solid #ffc700;
+}
+
+#contact_faq h5 {
+    font-size: 16px;
+}
+
+.contact_textarea {
+    resize: none !important;
+    width: 100% !important;
+}
+.preebooking_cards {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.contact_h4 {
+ font-size: 1rem;
+}
+.contact_h4 {
+    font-size: 1.25rem;
+   }
+
+/* prebook model */
+ .modal_body {
+    height: 430px;
+    overflow-y: scroll;
+}
+.contact_paragraph {
+    color:#666; 
+}
+
+/* dealer form */
+.button_margin {
+ margin-top: 50px;
+}
+.dealer_heading {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.contact_icon {
+    font-size: 50px;
+}
+.icon_color {
+ color: white !important;
+ 
+}
+.p_color {
+    color: white !important;
+}
+/* media query */
+@media (max-width: 576px) {
+.contact_tabs {
+    margin-bottom: 15px;
+}
+.contact_faq{
+    font-size: 12px;
+}
+}
+

@@ -1,0 +1,50 @@
+.page_headings {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+ .sub_heading {
+    font-size: 16px !important;
+    color: #666 !important;
+    font-style: italic !important;
+    font-weight:500 ;
+}
+
+.aboutus_stylep {
+    font-size: 0.90em!important;
+    line-height:25px;
+    color:#666;
+}
+.sec_heading {
+    font-size: 1rem;
+}
+ /* .about-brands-block   ul {
+        list-style: none;
+    }
+  .about-brands-block  ul li {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    .ul-warning-style li {
+        font-size: 14px;
+        color:#666;
+    } */
+     
+    .first {
+        width: 100%;
+    }
+    .brand_list {
+        margin-bottom: 0px;
+        display: inline-block;
+        width: 100%;
+        list-style: none;
+    }
+    .brand_li {
+        width: 20%;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .brand_list.second li {
+        width: 20%;
+    }

@@ -1,0 +1,28 @@
+.carousel-item {
+  cursor: pointer;
+}
+
+.carousel-control-prev i {
+  font-size: 30px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #ffffff !important;
+  /* background-color: #d35400 !important; */
+}
+
+.banner_carousel .carousel_capt .caption_btn {
+  padding: 13px 18px !important;
+  background-color: #ffc107 !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (max-width:767px) {
+  .banner_carousel .carousel_capt .caption_btn {
+    font-size: 10px;
+
+  }
+}

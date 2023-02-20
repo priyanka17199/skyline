@@ -1,0 +1,79 @@
+.black {
+  color: #000;
+}
+
+.sports_ride .item a img {
+  max-height: 277px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+​.item {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+​.box_card .img_btn {
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  position: absolute;
+  /* text-align: center; */
+}
+
+.box_card .img_btn span {
+    font-size: 1.1rem;
+    border: 1px solid #fff;
+    padding: 5px 30px;
+    background-color: rgba(254, 254, 254, 0.15);
+    text-shadow: 0 0 20px rgb(0 0 0 / 50%);
+    /* -webkit-text-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
+    color: #fff;
+}
+.img_div {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(254, 254, 254, 0.15);
+  color: white;
+  font-size: 1rem;
+  padding: 5px 15px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+  text-shadow: 0 0 20px rgb(0 0 0 / 50%);
+  -webkit-text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  border-radius: 0px;
+  min-width: 120px;
+}
+.img_div:focus {
+  outline: none;
+}
+.last_btnnew {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+.image_div {
+  position: relative;
+}
+.img_text {
+  position: absolute;
+}
+
+
+
+.manual_btn:hover {
+  text-shadow: 0 0 20px rgb(0 0 0 / 50%);
+  -webkit-text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.item a {
+  text-decoration: none;
+}
