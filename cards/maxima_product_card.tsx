@@ -24,6 +24,7 @@ import {
 import ToastNotification from "../components/ToastNotification";
 import useWishlist from "../hooks/general_hooks/wishlist_hook";
 // import UseWishProduct from "../hooks/wish_products_hook";
+import loadingGif from "../public/assets/images/circle-loader.gif";
 
 export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
   const {
@@ -48,7 +49,7 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
 
   // console.log("productid", productid);
   const wishlist_state = useSelector((state: any) => state.wishlist);
-
+  console.log("maxima card tsx", wishlist_state.item.msg);
 
   let wishproducts: any;
 
@@ -89,10 +90,9 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
     //     dispatch(ProductDetailApi(id));
     //     dispatch(ProductVariantsApi(id));
     // }
-  };
+};
 
   console.log("brand img", brand_img);
-
   const handleRenderingOfImages = () => {
     if (img_url !== null) {
       return (
@@ -206,11 +206,11 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
           <Link href={url} className="">
             {/* <a onClick={() => handleProdShow(id)}> */}
 
-            {handleRenderingOfImages()}
+            {/* {handleRenderingOfImages()} */}
 
-            {/* {img_url !== null ? (
+             {img_url !== null ? (
               <Image
-                // loader={() => `${CONSTANTS.API_BASE_URL}${img_url}`}
+         
                 loader={myLoader}
                 src={img_url}
                 // src={maximaCard}
@@ -222,15 +222,14 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
             ) : (
               <Image
                 // loader={() => `${CONSTANTS.API_BASE_URL}${img_url}`}
-                loader={myLoader}
-                src={brand_img}
+                src={loadingGif}
                 // src={maximaCard}
                 alt="product-detail"
                 width={300}
                 height={300}
                 className="img-fluid"
               />
-            )} */}
+            )} 
 
             {/* </a> */}
           </Link>
@@ -277,7 +276,7 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
               {mrp_price}
             </del>
           </div>
-
+​
           <div className="cart ps-2 col-lg-3 col-md-4 col-4">
             <a
               className="prodCart my-0"

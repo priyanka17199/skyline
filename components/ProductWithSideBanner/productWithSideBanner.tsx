@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import { prod_listing } from "../../datasets/sp_product_listing_with_banner";
+// import { prod_listing } from "../../datasets/sp_product_listing_with_banner";
 import cart from "../public/assets/images/4-1.jpg";
 // import { ProductCard } from "../cards/product_card";
 import { MaximaProductCard } from "../../cards/maxima_product_card";
@@ -71,8 +71,8 @@ const ProductWithSideBanner = () => {
                             >
                               <figure>
                                 <MaximaProductCard
-                                  id={product.id}
-                                  prod_name={product.prod_name}
+                                  name={product.name}
+                                  item_name={product.item_name}
                                   prod_slug={product.product_slug}
                                   price={product.price}
                                   mrp_price={product.mrp_price}

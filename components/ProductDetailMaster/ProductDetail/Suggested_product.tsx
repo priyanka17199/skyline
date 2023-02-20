@@ -16,14 +16,14 @@ import { useSelector } from "react-redux";
 
 
 const SuggestedProduct = (props: any) => {
-//   const {
-//     suggestedDataState,
-//   } = props;
+  const {
+    suggestedDataState,
+  } = props;
 
-//   console.log("suggested data in render file", suggestedDataState);
-//   const [Data, setData] = useState(related_product)
+  console.log("suggested data in render file", suggestedDataState);
+  // const [Data, setData] = useState(related_product)
 
-//   let items = document.querySelectorAll('.carousel .carousel-item')
+  let items = document.querySelectorAll('.carousel .carousel-item')
 // console.log(items,)
 // items.forEach((el) => {
 //     const minPerSlide = 4
@@ -42,7 +42,7 @@ const SuggestedProduct = (props: any) => {
   return (
 
     <>
-      {/* <section className="related-product-section">
+      <section className="related-product-section">
         <div className="title-link-wrapper mb-4">
           <h4 className="title">Suggested Products</h4>
           <a
@@ -67,8 +67,8 @@ const SuggestedProduct = (props: any) => {
       {suggestedDataState?.length > 0 && suggestedDataState?.map((newdata: any, i: any) => (<SwiperSlide key={i} >
             <div className="swiper-slide product" key={i}>
               <MaximaProductCard
-               id={newdata.id}
-               prod_name={newdata.prod_name}
+               name={newdata.name}
+               item_name={newdata.item_name}
                prod_slug={newdata.product_slug}
                price={newdata.price}
                mrp_price={newdata.mrp_price}
@@ -80,7 +80,7 @@ const SuggestedProduct = (props: any) => {
             </div>
             </SwiperSlide>))}
         </Swiper>
-      </section> */}
+      </section>
 
 
 {/* <div className="container text-center my-3">
