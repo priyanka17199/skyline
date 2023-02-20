@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { related_product } from "../../../datasets/Relatedproduct";
+// import { related_product } from "../../../datasets/Relatedproduct";
 import { MaximaProductCard } from "../../../cards/maxima_product_card";
 import { Navigation, Pagination, Scrollbar, A11y, Controller } from 'swiper';
 import {  } from 'swiper';
@@ -16,15 +16,15 @@ import { useSelector } from "react-redux";
 
 
 const SuggestedProduct = (props: any) => {
-  const {
-    suggestedDataState,
-  } = props;
+//   const {
+//     suggestedDataState,
+//   } = props;
 
-  console.log("suggested data in render file", suggestedDataState);
-  const [Data, setData] = useState(related_product)
+//   console.log("suggested data in render file", suggestedDataState);
+//   const [Data, setData] = useState(related_product)
 
-  let items = document.querySelectorAll('.carousel .carousel-item')
-console.log(items,)
+//   let items = document.querySelectorAll('.carousel .carousel-item')
+// console.log(items,)
 // items.forEach((el) => {
 //     const minPerSlide = 4
 //     let next = el.nextElementSibling
@@ -83,7 +83,7 @@ console.log(items,)
       </section> */}
 
 
-<div className="container text-center my-3">
+{/* <div className="container text-center my-3">
   
     <div className="row mx-auto my-auto justify-content-center">
         <div id="recipeCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -114,7 +114,7 @@ console.log(items,)
             </a>
         </div>
     </div>
-</div>
+</div> */}
 
 
     

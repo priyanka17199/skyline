@@ -4,18 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import Link from "next/link";
 import * as ga from "../lib/ga";
-import {
-  AddCartApi
-} from "../store/slices/cart_page_slice/add_to_cart";
+import { AddCartApi } from "../store/slices/cart_page_slice/add_to_cart";
 import useProductDetail from "../hooks/product_detail_page_hooks/product_detail_hook";
 import useHomeCategoriesWithListing from "../hooks/home_page_hooks/home_categories_listing_hook";
 import { CartListingApi } from "../store/slices/cart_page_slice/cart_slice";
+import loadingGif from "../public/assets/images/circle-loader.gif";
 const TopCategories = () => {
-  const {
-    detail,
-    quantity,
-  } = useProductDetail()
-  let prod_name:any;
+  const { detail, quantity } = useProductDetail();
+  let prod_name: any;
   const dispatch = useDispatch();
   const topcategory = useHomeCategoriesWithListing();
   const myLoader = ({ src, width, quality }: any) => {
@@ -23,21 +19,18 @@ const TopCategories = () => {
       quality || 75
     }`;
   };
-
-  const handleAddCart = async (prod_name:any) => {
-   console.log("prod_name", prod_name);
-
-      dispatch(AddCartApi(prod_name, quantity));
-      setTimeout(() => {
-        dispatch(CartListingApi());
-      }, 5000);
-      ga.event({
-        action: "add_to_cart",
-        params: {
-          not_set: detail[0]?.name,
-        },
-      });
-    
+  const handleAddCart = async (prod_name: any) => {
+    console.log("prod_name", prod_name);
+    dispatch(AddCartApi(prod_name, quantity));
+    setTimeout(() => {
+      dispatch(CartListingApi());
+    }, 5000);
+    ga.event({
+      action: "add_to_cart",
+      params: {
+        not_set: detail[0]?.name,
+      },
+    });
   };
   console.log(topcategory, "topcategory");
   return (
@@ -76,13 +69,25 @@ const TopCategories = () => {
                             <figure className="card_images">
                               <Link href="#">
                                 <a>
-                                  <Image
-                                    loader={myLoader}
-                                    src={items.image_url}
-                                    alt="Product"
-                                    width={380}
-                                    height={400}
-                                  />
+                                  {items.image_url !== null ? (
+                                    <Image
+                                      loader={myLoader}
+                                      src={items.image_url}
+                                      alt="Product"
+                                      width={380}
+                                      height={400}
+                                    />
+                                  ) : (
+                                    <Image
+                                      // loader={() => `${CONSTANTS.API_BASE_URL}${img_url}`}
+                                      src={loadingGif}
+                                      // src={maximaCard}
+                                      alt="product-detail"
+                                      width={300}
+                                      height={300}
+                                      className="img-fluid"
+                                    />
+                                  )}
                                 </a>
                               </Link>
                             </figure>
@@ -90,7 +95,7 @@ const TopCategories = () => {
                               <h3 className="product-name">
                                 <Link href={items.url}>
                                   <a href="product-default.html">
-                                    {prod_name = items.item_name}
+                                    {(prod_name = items.item_name)}
                                   </a>
                                 </Link>
                               </h3>
@@ -101,7 +106,6 @@ const TopCategories = () => {
                                 </del>
                               </div>
                             </div>
-                        
                           </div>
                         </div>
                       </>
