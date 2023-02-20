@@ -1,0 +1,53 @@
+
+.profile_cont {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    margin-top: 120px !important;
+  }
+
+  /* .red{
+    color:red;
+  }
+
+   .form-label {
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 2px !important;
+    color:#7f8c8d;
+    font-size: 12px;
+    
+  }
+  textarea {
+    resize: none !important;
+  } */
+  .profile_cont p{
+  margin-bottom: 0 !important;
+}
+
+/* .profile_cont h2 {
+  font-size: 20px !important;
+} */
+
+.profile_cont p {
+  font-size: 14px !important;
+}
+.profile_cont {
+  font-size: 24px !important;
+  color:#000000;
+}
+
+/* dealer profile */
+
+.dealerprofile_h5 {
+  font-weight: 600;
+}
+
+.dealerprofile_h6 {
+  font-size: 14px;
+  color:#555;
+}
+.black {
+  color:#000 !important;
+}

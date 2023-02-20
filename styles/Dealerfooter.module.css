@@ -1,0 +1,108 @@
+
+
+.dealerfooter_h6 {
+  display: inline-block;
+  /* transition: 1s ease-in-out; */
+    font-weight: 600;
+    color: #4d4d4d;
+    font-size: 13px !important;
+}
+.dealerfooter_h6::after{
+    content: "";
+    background: #555;
+    width: 0;
+    height: 2px;
+    display:block;
+    width: 5px;
+    margin:10px 0;
+    /* transition: 0.5s; */
+}
+
+/* .f-block h6:hover::after{ 
+   width:100%;
+}  */
+.dealerfooter_ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dealerfooter_link {
+    text-decoration: none; 
+    color: #666;
+    /* color: #000000; */
+}
+
+   .dealerfooter_link:hover {
+    color: #09f;
+   }
+
+.dealer-footer .contact-us a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.copy_right {
+    color: #666;
+    font-size: 14px;
+}
+
+.btn_footer {
+    font-size: 12px;
+    font-weight: 500;
+    color:#000000;
+    border-color: #ffc700;
+    border-radius: 0px;
+}
+
+ .btn_footer:hover{
+    color:#000;
+    background-color: #ffc700;
+}
+
+ .btn_footer:focus{
+    color:#000;
+    background-color: #ffc700;
+}
+
+.footersocial_block {
+    text-align: center;
+}
+.dealer-footer .social-wrapper .social-block h5 {
+   /* font-size: 14px; */
+   color:#555555;
+   font-weight: 800;
+}
+.footersocial_ul {
+    list-style: none;
+    padding: 0;
+   
+}
+
+.footersocial_li {
+    display: inline-block;
+   }
+
+.footersocial_h5 {
+    color:#666;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.footersocial_a {
+    color: #555555;
+    font-size: 30px;
+    margin: 0 15px;
+    
+   }
+.linkedin_icons {
+    color: #ffffff;
+    background-color: #666666;
+    padding: 1px 4px;
+    font-size: 23px;
+}
+.linkedin_icons:hover {
+    color: #ffffff;
+    background-color: #0d6efd !important;
+    padding: 1px 4px;
+    font-size: 23px;
+}

@@ -1,0 +1,45 @@
+
+.bill_checkbox {
+    cursor: pointer;
+}
+
+
+
+.ship_heading {
+    cursor: pointer;
+    /* padding: 0 20px; */
+}
+
+.bill_heading {
+    cursor: pointer;
+    
+}
+
+.address_icon {
+    border: none;
+    background: none;
+    /* font-size: 10px; */
+}
+
+.card_p {
+    font-size: 13px;
+    margin-top:-5px;
+}
+
+
+/* order sumamry */
+
+.cart_p {
+    margin: -6px 0px;
+    font-size: 12px;
+}
+
+.summary_p {
+    margin: -6px 0px;
+}
+
+/* visitor checkout */
+
+.order_summary_sec {
+    margin-top: 69px;
+}

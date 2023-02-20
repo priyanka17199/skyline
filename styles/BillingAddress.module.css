@@ -1,0 +1,68 @@
+/* body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+* {
+    box-sizing: border-box; 
+}
+.container{
+   
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .form-wrap {
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid #7f8c8d;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+   
+   
+  }
+
+
+  .form-label {
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 2px !important;
+    color:#7f8c8d;
+    font-size: 12px;
+    
+  }
+  textarea {
+    resize: none !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  .form-control{
+    width: 50% !important;
+  }
+   */
+
+   .red{
+    color:red;
+  }
+
+  
+  
+  .billing_header {
+    font-size: 25px;
+    
+  }
+
+ .billing_form {
+    background-color: rgb(250, 250, 250);
+ }
+
+ .edit_icon {
+    background-color: aliceblue;
+ }

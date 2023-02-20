@@ -1,0 +1,38 @@
+    
+    .page_heading
+    {
+        font-weight: 800;
+        font-size: 1.25rem;
+    }
+    
+    .page_content {
+        font-size: 0.90em!important;
+        color:#666;
+        line-height: 25px;
+    }
+    .small_heading {
+        font-size: 16px !important;
+        font-weight: 800;
+        text-decoration: underline;
+    }
+    .privacy_policy_ul {
+       
+        font-size: 0.90em!important;
+        list-style-type: lower-alpha;
+        line-height: 25px;
+        color:#666;
+    
+    }
+    .privacy_policy_li {
+        font-size: 0.90em!important;
+        list-style-type: none;
+        line-height: 25px;
+        color:#666; 
+    }
+    .privacy_policy_ol {
+        margin-left: -31px;
+    }
+
+   
+
+    

@@ -1,0 +1,53 @@
+.page_heading
+{
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+.small_heading
+{
+    font-size: 16px !important;
+    font-weight: 800;
+    text-decoration: underline;
+}
+.ul-main-div
+{
+    margin-left: 28px;
+    font-size: 0.90em!important;
+    line-height:25px;
+}
+.privacy_policy_ul
+{
+   
+    font-size: 0.90em!important;
+    list-style-type: lower-roman;
+    line-height: 25px;
+    color:#666;
+
+}
+.terms_condition_ul
+{ 
+    line-height: 25px;
+    color:#666;
+    list-style-type:lower-alpha;
+    font-size: 1.00em!important;
+
+}
+.page_content
+{
+    font-size: 0.90em!important;
+    line-height:25px;
+    color:#666;
+}
+.terms_condition_ol {
+    margin-top: -13px;
+}
+
+@media screen and (min-width:768px) {
+    .my_container
+{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+}
+
+

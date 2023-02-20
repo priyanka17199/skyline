@@ -1,0 +1,37 @@
+.sideRibbon2 {
+    position: fixed;
+    top: 40%;
+    /* transform: translateY(-90%); */
+    /* -webkit-transform: translateY(-50%); */
+    /* transform: rotate(90deg); */
+    padding: 5px;
+    /* height: 400px; */
+    /* width: 100px; */
+    background-color: #c4c6c5;
+    z-index: 999;
+    color: #2f2e2c;
+    max-width: 100%;
+    /* letter-spacing: 1px; */
+    right: 1;
+}
+
+.media_a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.media_para {
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    width: 36px;
+    color: rgba(47, 46, 44, 255);
+    vertical-align: middle;
+    text-align: center;
+    /* font-size: 14px !important; */
+    font-weight:bolder !important;
+    display: inline-block;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 10px 5px;
+}
