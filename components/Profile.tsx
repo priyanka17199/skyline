@@ -45,7 +45,7 @@ const Profile = () => {
                 <div className="mb-2 row">
                   <div className="col-lg-12">
                     <h4 className="mb-0 profileList">
-                      {profileList && profileList.profileList.billing_address?.name}
+                      {profileList && profileList?.profileList?.billing_address?.name}
                     </h4>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ const Profile = () => {
                   <div className="col-sm-7 fw-bolder ">
                     <h6>
                       {profileList &&
-                        profileList.profileList.profile_details?.contact_no}
+                        profileList?.profileList?.profile_details?.contact_no}
                     </h6>
                   </div>
                 </div>
@@ -68,7 +68,7 @@ const Profile = () => {
                   <div className="col-sm-7 fw-bolder ">
                     <h6>
                       {profileList &&
-                        profileList.profileList.profile_details?.email}
+                        profileList?.profileList?.profile_details?.email}
                     </h6>
                   </div>
                 </div>
@@ -92,7 +92,7 @@ const Profile = () => {
                     <h4 className="fw-bolder">
                       <i>₹&nbsp;</i>
                       {(profileList &&
-                        profileList.profileList.store_credit_details
+                        profileList?.profileList?.store_credit_details
                           ?.balance) ||
                         0}
                     </h4>
@@ -127,7 +127,7 @@ const Profile = () => {
                     <p className="">Name :</p>
                   </div>
                   <div className="col-sm-7 fw-bolder ">
-                    <h6>{profileList && profileList.profileList.billing_address?.name}</h6>
+                    <h6>{profileList && profileList?.profileList?.billing_address?.name}</h6>
                   </div>
                 </div>
                 <div className="row mb-2">
@@ -135,7 +135,7 @@ const Profile = () => {
                     <p className="">Email ID :</p>
                   </div>
                   <div className="col-sm-7 fw-bolder ">
-                    <h6>{profileList && profileList.profileList.billing_address?.email}</h6>
+                    <h6>{profileList && profileList?.profileList?.billing_address?.email}</h6>
                   </div>
                 </div>
                 <div className="row mb-2">
@@ -144,7 +144,7 @@ const Profile = () => {
                   </div>
                   <div className="col-sm-7 fw-bolder ">
                     <h6>
-                      {profileList && profileList.profileList.billing_address?.contact}
+                      {profileList && profileList?.profileList?.billing_address?.contact}
                     </h6>
                   </div>
                 </div>
@@ -154,10 +154,10 @@ const Profile = () => {
                   </div>
                   <div className="col-sm-7 w-lg-25 w-sm-75 ">
                     <h6>
-                      {profileList && profileList.profileList.billing_address?.address_1}
+                      {profileList && profileList?.profileList?.billing_address?.address_1}
                     </h6>
                     <h6>
-                      {profileList && profileList.profileList.billing_address?.address_2}
+                      {profileList && profileList?.profileList?.billing_address?.address_2}
                     </h6>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ const Profile = () => {
                   </div>
                   <div className="col-sm-7 fw-bolder ">
                     <h6>
-                      {profileList && profileList.profileList.billing_address?.postal_code}
+                      {profileList && profileList?.profileList?.billing_address?.postal_code}
                     </h6>
                   </div>
                 </div>
@@ -177,7 +177,7 @@ const Profile = () => {
                     <p className="">state :</p>
                   </div>
                   <div className="col-sm-7 fw-bolder ">
-                    <h6>{profileList && profileList.profileList.billing_address?.state}</h6>
+                    <h6>{profileList && profileList?.profileList?.billing_address?.state}</h6>
                   </div>
                 </div>
                 <div className="row mb-2">
@@ -186,7 +186,7 @@ const Profile = () => {
                   </div>
                   <div className="col-sm-7 fw-bolder ">
                     <h6>
-                      {profileList && profileList.profileList.billing_address?.country}
+                      {profileList && profileList?.profileList?.billing_address?.country}
                     </h6>
                   </div>
                 </div>

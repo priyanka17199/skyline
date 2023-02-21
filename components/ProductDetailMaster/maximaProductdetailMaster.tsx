@@ -8,7 +8,8 @@ import ProductDescription from "./ProductDetail/Product_description";
 import SuggestedProduct from "./ProductDetail/Suggested_product";
 import AletrnativeProduct from "./ProductDetail/Alternative_product";
 import RelatedProduct from "./ProductDetail/Related_product";
-
+import ToastNotification from "../../components/ToastNotification";
+import { useState, FC, useEffect } from "react";
 export const config = { amp: 'hybrid' };
 
 const MaximaProductDetailMaster = () => {
@@ -28,15 +29,20 @@ const MaximaProductDetailMaster = () => {
     handleQuantityIncre,
     suggestedDataState,
     alternativeDataState,
-    stockAvailability
+    stockAvailability,
+    setWishlistToast,
+    wishlistToast,
+    setWishlistToastnew,
+    WishlistToastnew,
   } = useProductDetail();
   const isAmp = useAmp();
   console.log("dealer variants", variants);
   console.log("master detail", detail);
   console.log("detail variants in master", variants);
   console.log("//images", images);
-  let isDealer: any;
 
+  let isDealer: any;
+  console.log("wishlistToast", WishlistToastnew);
   if (typeof window !== "undefined") {
     isDealer = localStorage.getItem("isDealer");
   }
@@ -44,7 +50,16 @@ const MaximaProductDetailMaster = () => {
   console.log("*****data", isAmp)
   return (
     <>
-
+    <ToastNotification
+          setShow={setWishlistToast}
+          show={wishlistToast}
+          content="Product Added"
+        />
+        <ToastNotification
+          setShow={setWishlistToastnew}
+          show={WishlistToastnew}
+          content="Item removed Successfully"
+        />
       <div className="">
         <div className="container" style={{ paddingBottom: "25px" }}>
           <div className="row">
@@ -76,6 +91,7 @@ const MaximaProductDetailMaster = () => {
                 handleQuantityIncre={handleQuantityIncre}
                 handleQuantityDecre={handleQuantityDecre}
                 stockAvailability={stockAvailability}
+              
               />
             </div>
 
@@ -93,7 +109,12 @@ const MaximaProductDetailMaster = () => {
           :""
         }  */}
               {suggestedDataState.length !== 0 ?
-                <RelatedProduct suggestedDataState={suggestedDataState} /> : ""}
+                <RelatedProduct suggestedDataState={suggestedDataState}
+                
+                setWishlistToast={setWishlistToast}
+                wishlistToast={wishlistToast}
+                setWishlistToastnew={setWishlistToastnew}
+                WishlistToastnew={WishlistToastnew}/> : ""}
             </div>
           </div>
         </div>

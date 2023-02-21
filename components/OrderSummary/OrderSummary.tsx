@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from '../../styles/checkout.module.css';
 import { Cart_Listing } from "../../store/slices/cart_page_slice/cart_slice";
 import Image from "next/image";
+import { CONSTANTS } from "../../services/config/api-config";
+import loadingGif from "../../public/assets/images/circle-loader.gif";
 
 const OrderSummary = (props: any) => {
   const { orderSummary } = props;
@@ -15,7 +17,7 @@ const OrderSummary = (props: any) => {
     setcartListingItems(cartProducts.item)  
   },[])
   const myLoader = ({ src, width, quality }:any) => {
-    return `http://scott-sports.8848digitalerp.com${src}?w=${width}&q=${quality || 75}`
+    return `${CONSTANTS.API_BASE_URL}${src}?w=${width}&q=${quality || 75}`
   }
   return (
     <div>
@@ -61,14 +63,25 @@ const OrderSummary = (props: any) => {
             <div className="row border mx-2 my-1 " key={index}>
               <div className="col-4">
                 <div className="checkout-img mt-3">
-                    <Image
-                  loader={myLoader}
-                    src={`${data.image_url}`}
-                    className="product_img img-fluid"
-                    alt="product image"
-                    width={120}
-                    height={120}
-                  />
+                {data.image_url > 0 || data.image_url !== null ? (
+                           <Image
+                           loader={myLoader}
+                             src={`${data.image_url}`}
+                             className="product_img img-fluid"
+                             alt="product image"
+                             width={120}
+                             height={120}
+                           />
+                          ) : (
+                            <Image
+                              src={loadingGif}
+                              className="product_item_img img-fluid border orderdetail_img"
+                              alt="product_img"
+                              width={130}
+                              height={130}
+                            />
+                          )}
+                 
                 </div>
               </div>
               <div className="col-8 ">

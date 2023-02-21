@@ -7,6 +7,7 @@ import { MaximaProductCard } from "../../../cards/maxima_product_card";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import FormModal from "../../../components/formModal";
+import ToastNotification from "../../../components/ToastNotification";
 
 const ProductList = ({
   listItems,
@@ -19,7 +20,8 @@ const ProductList = ({
   console.log("////product", product);
   console.log("////count", listItems);
   const [show, setShow] = useState<any>(false);
-
+  const [wishlistToast, setWishlistToast] = useState(false);
+  const [WishlistToastnew, setWishlistToastnew] = useState(false);
 const handlemodalOpen = () => {
   setShow(true)
 }
@@ -28,6 +30,16 @@ const handlemodalclose = () => {
 }
   return (
     <>
+       <ToastNotification
+          setShow={setWishlistToast}
+          show={wishlistToast}
+          content="Product Added"
+        />
+        <ToastNotification
+          setShow={setWishlistToastnew}
+          show={WishlistToastnew}
+          content="Item removed Successfully"
+        />
       <div className="col-lg-9">
         <div className={`${styles.sorting_bar} border-top border-bottom`}>
           <div className="">
@@ -77,6 +89,10 @@ const handlemodalclose = () => {
                   brand={items.brand}
                   brand_img={items.brand_img}
                   display_tag={items.display_tag}
+                  wishlistToast={wishlistToast}
+                  setWishlistToast={setWishlistToast}
+                  WishlistToastnew={WishlistToastnew}
+                  setWishlistToastnew={setWishlistToastnew}
                 />
               </div>
             ))

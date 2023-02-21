@@ -8,6 +8,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import Link from "next/link";
 import scottlogo from "../../../public/scott.png";
 import { CONSTANTS } from "../../../services/config/api-config";
+import maximaCard from "../../../public/assets/images/maximaCard.jpg";
 const ProductImage: FC<ProductDetailCardInterface> = (props: any) => {
   const { detail, images } = props;
   console.log("product details images", images);
@@ -53,14 +54,15 @@ const ProductImage: FC<ProductDetailCardInterface> = (props: any) => {
   }
 
   const handleSlideShowImages = () => {
-    if (typeof window !== "undefined") {
+
       if (images.length > 0) {
         return <ImageGallery items={images} />
       }
-    }
-    else {
-      return
-    }
+      else {
+        return <Image src={maximaCard} width={300} height={300} alt="product image"/>
+      }
+    
+  
   }
   return (
     <>

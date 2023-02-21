@@ -1,21 +1,19 @@
 // import React from "react";
 import * as React from "react";
 import { useState, useEffect } from "react";
-// import { related_product } from "../../../datasets/Relatedproduct";
+
 // import "./styles.css"
 import { useKeenSlider } from "keen-slider/react";
 import { MaximaProductCard } from "../../../cards/maxima_product_card";
 import "keen-slider/keen-slider.min.css";
-import { CONSTANTS } from "../../../services/config/api-config";
 export default function RelatedProduct(props: any) {
-  const { suggestedDataState } = props;
+  const { suggestedDataState,  setWishlistToast, wishlistToast, setWishlistToastnew, WishlistToastnew} = props;
   const myLoader = ({ src, width, quality }: any) => {
-    return `${CONSTANTS.API_BASE_URL}/${src}?w=${width}&q=${
+    return `http://scott-sports-v14.8848digitalerp.com${src}?w=${width}&q=${
       quality || 75
     }`;
   };
 
-//   const [Data, setData] = useState(related_product);
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
 
@@ -59,6 +57,11 @@ export default function RelatedProduct(props: any) {
                 img_url={newdata.image_url}
                 in_stock_status={newdata.in_stock_status}
                 url={newdata.url}
+                setWishlistToast={setWishlistToast}
+                wishlistToast= {wishlistToast} 
+                setWishlistToastnew={setWishlistToastnew}
+                 WishlistToastnew={WishlistToastnew}
+
               />
             </div>
           ))}

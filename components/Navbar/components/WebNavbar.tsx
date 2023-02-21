@@ -92,11 +92,6 @@ const WebNavbar = ({ navMenuclick }: any) => {
             </div>
           </div>:<div className="container">
             <div className="header-right">
-                <Link href="/contact_us">
-              <a  className="d-lg-show">
-                Contact Us
-              </a>
-              </Link>
               <Link href="/login">
               <a 
                 className="d-lg-show login sign-in"

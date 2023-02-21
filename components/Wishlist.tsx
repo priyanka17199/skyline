@@ -13,7 +13,7 @@ import { AddCartApi, ResetAddCart, addcart } from "../store/slices/cart_page_sli
 import * as ga from "../lib/ga";
 import { Norecord } from "../components/NoRecord";
 import {wishlist_state} from "../store/slices/general_slice/wishlist_slice"
-
+import loadingGif from "../public/assets/images/circle-loader.gif"
 const Wishlistcom = () => {
   const { quantity } = useProductDetail();
   const dispatch = useDispatch();
@@ -111,13 +111,26 @@ const Wishlistcom = () => {
                           <div className="p-relative">
                             <a href="product-default.html">
                               <figure>
-                                <Image
-                                  loader={myLoader}
-                                  src={item?.image_url!== null ? item.image_url:""}
-                                  alt="wishlist-product"
-                                  width={300}
-                                  height={300}
-                                />
+                            
+
+{item.image_url==="" || item.image_url !== null ? (
+                           <Image
+                           loader={myLoader}
+                             src={`${item?.image_url}`}
+                             className="product_img img-fluid"
+                             alt="product image"
+                             width={120}
+                             height={120}
+                           />
+                          ) : (
+                            <Image
+                              src={loadingGif}
+                              className="product_item_img img-fluid border orderdetail_img"
+                              alt="product_img"
+                              width={130}
+                              height={130}
+                            />
+                          )}
                               </figure>
                             </a>
                             <button
