@@ -485,3 +485,6 @@ body .product-popup {
     width: 200px;
     height: 75px;
 }
+.modal-backdrop.show  {
+    opacity: 0.2 !important;
+}

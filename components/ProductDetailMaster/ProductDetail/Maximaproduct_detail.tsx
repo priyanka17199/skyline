@@ -8,14 +8,13 @@ import {
 } from "../../../store/slices/cart_page_slice/add_to_cart";
 // import ResetAddCart from "../../../store/slices/add_to_cart";
 import { CartListingApi } from "../../../store/slices/cart_page_slice/cart_slice";
-import { prodDetail } from "../../../datasets/prodDetail";
-import { prodDetailUpdate } from "../../../datasets/prodDetailUpdate";
 import ToastNotification from "../../ToastNotification";
 import table from "../../../styles/test.module.css";
 import { dealerAddCartApi } from "../../../store/slices/cart_page_slice/dealer_addto_cart_slice";
 import Image from "next/image";
 import * as ga from "../../../lib/ga";
 import getproductPincode from "../../../services/api/product_detail_api/pincode_validate_api";
+import { CONSTANTS } from "../../../services/config/api-config";
 
 const Product_detail: FC<ProductDetailCardInterface> = (props: any) => {
   const {
@@ -73,7 +72,7 @@ const Product_detail: FC<ProductDetailCardInterface> = (props: any) => {
   console.log(isDealer);
 
   const myLoader = ({ src, width, quality }: any) => {
-    return `http://scott-sports-v14.8848digitalerp.com${src}?w=${width}&q=${
+    return `${CONSTANTS.API_BASE_URL}${src}?w=${width}&q=${
       quality || 75
     }`;
   };

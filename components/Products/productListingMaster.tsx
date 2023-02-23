@@ -5,6 +5,8 @@ import ProductList from './ProductsList/productList';
 import Filters from './Filters/components/filters';
 import MobileFilter from './Filters/components/mobile_filter';
 import { useProductListing } from '../../hooks/product_listing_page_hooks/product_listing_hook';
+import useProductDetail from "../../hooks/product_detail_page_hooks/product_detail_hook";
+
 
 const Index = () => {
     let {
@@ -21,7 +23,14 @@ const Index = () => {
         isLoadMore,
         handleClearFilter
     }: any = useProductListing();
-
+    let { wishlistToast,
+        setWishlistToastnew,
+        WishlistToastnew,
+        handleWishlist,
+        content,
+        setWishlistToast,
+        setContents
+      }:any = useProductDetail();
     // console.log("Product listing ", productList)
     return (
         <div>
@@ -51,6 +60,13 @@ const Index = () => {
                             handlePrice={handlePrice}
                             productCount={productCount}
                             isLoadMore={isLoadMore}
+                            setWishlistToast={setWishlistToast}
+                            wishlistToast={wishlistToast}
+                            setWishlistToastnew={setWishlistToastnew}
+                            WishlistToastnew={WishlistToastnew}
+                            content={content}
+                            setContents={setContents}
+                            handleWishlist={handleWishlist}
                         />
                     </div>
 

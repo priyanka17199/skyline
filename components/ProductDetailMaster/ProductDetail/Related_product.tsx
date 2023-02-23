@@ -7,12 +7,8 @@ import { useKeenSlider } from "keen-slider/react";
 import { MaximaProductCard } from "../../../cards/maxima_product_card";
 import "keen-slider/keen-slider.min.css";
 export default function RelatedProduct(props: any) {
-  const { suggestedDataState,  setWishlistToast, wishlistToast, setWishlistToastnew, WishlistToastnew} = props;
-  const myLoader = ({ src, width, quality }: any) => {
-    return `http://scott-sports-v14.8848digitalerp.com${src}?w=${width}&q=${
-      quality || 75
-    }`;
-  };
+  const { suggestedDataState,  setWishlistToast, wishlistToast, setWishlistToastnew, WishlistToastnew,content, setContents,handleWishlist} = props;
+
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -61,6 +57,9 @@ export default function RelatedProduct(props: any) {
                 wishlistToast= {wishlistToast} 
                 setWishlistToastnew={setWishlistToastnew}
                  WishlistToastnew={WishlistToastnew}
+                 content={content}
+                 setContents={setContents}
+                 handleWishlist={handleWishlist}
 
               />
             </div>

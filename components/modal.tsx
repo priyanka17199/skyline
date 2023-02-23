@@ -1,16 +1,21 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { AddCartApi } from "../store/slices/cart_page_slice/add_to_cart";
+import { getAddCartList } from "../services/api/cart_page_api/add_cart_api";
 import { Modal } from "react-bootstrap";
 import { CartListingApi } from "../store/slices/cart_page_slice/cart_slice";
 import { dealerAddCartApi } from "../store/slices/cart_page_slice/dealer_addto_cart_slice";
 import ToastNotification from "./ToastNotification";
+import {
+  ResetAddCart,
+  addcart,
+} from "../store/slices/cart_page_slice/add_to_cart";
+import { CONSTANTS } from "../services/config/api-config";
 // import "../../pages/product-detail/details.css";
 // import { AddCartApi } from "../../store/screens/add-to-cart";
 // import { CartListingApi } from "../../store/screens/cart-listing";
 // import styles from "../styles/Product_Detail.module.css"
-const Modals = ({ show, toHide, name, id, prod_slug, showToast1, setshowToast1 }: any) => {
+const Modals = ({ show, toHide, name, id, prod_slug }: any) => {
   let [data, setdata] = useState<any>([]);
   let [sizes, setsize] = useState<any>([]);
   let [colors, setColors] = useState<any>([]);
@@ -23,21 +28,26 @@ const Modals = ({ show, toHide, name, id, prod_slug, showToast1, setshowToast1 }
   const [coloractive, setcolorActive] = useState<any>(false);
   const [indexSize, setIndexsize] = useState<any>();
   const [indexColor, setIndexcolor] = useState<any>();
-  
+const [cartMsg, setCartmsg] = useState<any>();
+  const [content, setContent] = useState<any>("");
+  const [showToast, setshowToast] = useState<any>(false);
   let newarry: any;
   const dispatch = useDispatch();
-  let newsize: any;
+  let Messageval: any;
+  // let newRes: any;
   const dealers = localStorage.getItem("isDealer");
+  const addtocart = useSelector(addcart);
+
 
   useEffect(() => {
     console.log(id);
     const getdetail = async (prod_id: any) => {
       await axios
         .get(
-          `http://scott-sports-v14.8848digitalerp.com/api/method/sportnetwork.api.map.version_mapper?version=v1&method=get_variants&entity=product&item=${prod_slug}`
+          `${CONSTANTS.API_BASE_URL}/api/method/sportnetwork.api.map.version_mapper?version=v1&method=get_variants&entity=product&item=${prod_slug}`
         )
         .then((res) => {
-          console.log(res);
+          console.log(res,"newres");
           setActive(true);
           setcolorActive(true);
           setdata((data = [res.data.message.data]));
@@ -107,42 +117,14 @@ const Modals = ({ show, toHide, name, id, prod_slug, showToast1, setshowToast1 }
   };
 
   console.log("modal color", data[0]);
-  const handleAddCart = () => {
-    if (dealers === "true") {
-      dispatch(dealerAddCartApi(newobject));
-      //  await getdealerAddCartList(Name, values).then((res)=>{
-      //   console.log(res)
-      //   })
-      setTimeout(() => {
-        dispatch(CartListingApi());
-      }, 1500);
-      toHide();
-    } else {
-      console.log(quantity);
-      console.log(selectedSize);
-      dispatch(
-        AddCartApi(
-          id,
-          quantity,
-          active === true ? sizes : selectedSize,
-          coloractive === true ? colors : selectedColor
-        )
-      );
-      // console.log(isItemAdded.item);
-      // if (isItemAdded.item === "Item Added To Cart") {
-      //     setshowToast(!showToast);
-      // }
-      // else {
-      //     setshowToast(false);
-      // }
 
-      setTimeout(() => {
-        dispatch(CartListingApi());
-      }, 1500);
-      toHide();
-      setshowToast1(!showToast1)
-    }
-  };
+
+  // useEffect(() => {
+  // if(Cartmsg.msg==="success"){
+  //   setcartToast(true)
+  // }
+
+  // }, [])
 
   const InputvalchangeHandler = (e: any, variant_code: any) => {
     if (e.target.value !== "") {
@@ -170,14 +152,60 @@ const Modals = ({ show, toHide, name, id, prod_slug, showToast1, setshowToast1 }
     }
   };
 
+  // if(Cartmsg?.msg==="success"){
+  //   setcartToast(true),
+  //   setContent(Cartmsg)
+
+  // }
+  // if(Cartmsg?.msg==="error"){
+  //   setcartToast(true),
+  //   setContent(Cartmsg?.error)
+  // }
+  const handleAddCart = async () => {
+    // if (dealers === "true") {
+    //   dispatch(dealerAddCartApi(newobject));
+      //  await getdealerAddCartList(Name, values).then((res)=>{
+      //   console.log(res)
+      //   })
+    //   setTimeout(() => {
+    //     dispatch(CartListingApi());
+    //   }, 1500);
+    //   toHide();
+    // } else {
+    const newRes = await getAddCartList( id,
+        quantity,
+        active === true ? sizes : selectedSize,
+        coloractive === true ? colors : selectedColor)
+        setCartmsg(newRes?.msg);
+       if(newRes.msg=="error") {
+         setshowToast(true),
+         setContent(newRes.error)
+        console.log(showToast,"showToast")
+       }
+       if(newRes.msg=="success") {
+    
+         setshowToast(true),
+         setContent(newRes.data)
+        console.log(showToast,"showToast")
+       }
+    console.log()
+      setTimeout(() => {
+        dispatch(CartListingApi());
+        toHide()
+      }, 1500);
+    
+  
+   
+  };
+  console.log(cartMsg, "cartMsg");
+  // console.log(newRes,"Messageval1")
   return (
     <>
       <ToastNotification
-        setShow={setshowToast1}
-        show={showToast1}
-        content="Added to Cart"
+        setShow={setshowToast}
+        show={showToast}
+        content={content}
       />
-
       <Modal show={show} onHide={toHide}>
         <Modal.Header closeButton>
           <Modal.Title

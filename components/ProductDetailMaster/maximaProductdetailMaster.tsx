@@ -9,7 +9,7 @@ import SuggestedProduct from "./ProductDetail/Suggested_product";
 import AletrnativeProduct from "./ProductDetail/Alternative_product";
 import RelatedProduct from "./ProductDetail/Related_product";
 import ToastNotification from "../../components/ToastNotification";
-import { useState, FC, useEffect } from "react";
+
 export const config = { amp: 'hybrid' };
 
 const MaximaProductDetailMaster = () => {
@@ -34,6 +34,9 @@ const MaximaProductDetailMaster = () => {
     wishlistToast,
     setWishlistToastnew,
     WishlistToastnew,
+    handleWishlist,
+    content,
+    setContents
   } = useProductDetail();
   const isAmp = useAmp();
   console.log("dealer variants", variants);
@@ -50,16 +53,16 @@ const MaximaProductDetailMaster = () => {
   console.log("*****data", isAmp)
   return (
     <>
-    <ToastNotification
+  <ToastNotification
           setShow={setWishlistToast}
           show={wishlistToast}
-          content="Product Added"
+          content={content}
         />
         <ToastNotification
           setShow={setWishlistToastnew}
           show={WishlistToastnew}
-          content="Item removed Successfully"
-        />
+          content={content}/>
+          
       <div className="">
         <div className="container" style={{ paddingBottom: "25px" }}>
           <div className="row">
@@ -114,7 +117,10 @@ const MaximaProductDetailMaster = () => {
                 setWishlistToast={setWishlistToast}
                 wishlistToast={wishlistToast}
                 setWishlistToastnew={setWishlistToastnew}
-                WishlistToastnew={WishlistToastnew}/> : ""}
+                WishlistToastnew={WishlistToastnew}
+                content={content}
+                setContents={setContents}
+                handleWishlist={handleWishlist}/> : ""}
             </div>
           </div>
         </div>

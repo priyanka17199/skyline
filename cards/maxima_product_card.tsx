@@ -20,9 +20,10 @@ import {
   AddWishlist,
   DeleteWishlist,
   GetWishlist,
+  wishliststate 
 } from "../store/slices/general_slice/wishlist_slice";
-
 import useWishlist from "../hooks/general_hooks/wishlist_hook";
+import { AddProductToWishlist } from "../services/api/general_api/wishlist_api";
 // import UseWishProduct from "../hooks/wish_products_hook";
 import loadingGif from "../public/assets/images/circle-loader.gif";
 
@@ -42,16 +43,18 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
     setWishlistToast,
     wishlistToast,
     setWishlistToastnew,
-    WishlistToastnew
+    WishlistToastnew,
+    content,
+    setContents,
+    handleWishlist
 
   } = props;
   console.log(props,"props")
-
+  const WishListData = useWishlist();
   const dispatch = useDispatch();
-  const [showToast, setshowToast] = useState(false);
-
+let wishList:any
   const [productss, setProducts] = useState<any>([]);
- 
+  const wishlisteitem = useSelector( wishliststate);
 
 
   const wishlist_state = useSelector((state: any) => state.wishlist);
@@ -149,41 +152,36 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
             {<p className="out_of_stock_text mb-0">Out of stock</p>}
           </div> */}
 
-          <div className="d-flex justify-content-end">
-            {wishlist_state.wishProduct.find((items: any) => {
-              if (items === name) {
-                wishproducts = items;
+<div className="d-flex justify-content-end">
+            {wishlist_state?.item?.data?.map((values: any) => {
+              if (values.id === name) {
+                wishproducts = values.id;
               }
             })}
             {!wishproducts ? (
+              <Link href="#">
               <a
-                href="#"
+              
                 // className="btn-product-icon btn-wishlist w-icon-heart mt-0"
-                onClick={() => {
-                  dispatch(AddWishlist(name));
-                  if (wishlist_state?.item?.msg === "success") {
-                    setWishlistToast(true);
-                  }
-                  setTimeout(() => {
-                    dispatch(GetWishlist());
-                  }, 500);
-                }}
+                onClick={()=>handleWishlist(name)}
               >
                 <i
                   className="fa fa-heart-o text-danger fs-1 "
                   aria-hidden="true"
                 ></i>
               </a>
+              </Link>
             ) : (
+              <Link href="#">
               <a
-                href="#"
                 onClick={() => {
                   console.log("clicked");
                   dispatch(DeleteWishlist(name));
-
+                  setWishlistToastnew(true);
+                setContents("items remove sucessfully")
                   setTimeout(() => {
                     dispatch(GetWishlist());
-                    setWishlistToastnew(true);
+                  
                   }, 500);
                 }}
               >
@@ -192,6 +190,7 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
                   aria-hidden="true"
                 ></i>
               </a>
+              </Link>
             )}
           </div>
         </div>
@@ -335,8 +334,8 @@ export const MaximaProductCard: FC<ProductCardInterface> = (props: any) => {
           name={item_name}
           id={name}
           prod_slug={prod_slug}
-          showToast1={wishlistToast}
-          setshowToast1={setWishlistToast}
+         
+
         />
       ) : null}
     </>

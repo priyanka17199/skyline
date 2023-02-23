@@ -12,14 +12,14 @@ import { CartListingApi } from "../store/slices/cart_page_slice/cart_slice";
 import { AddCartApi, ResetAddCart, addcart } from "../store/slices/cart_page_slice/add_to_cart";
 import * as ga from "../lib/ga";
 import { Norecord } from "../components/NoRecord";
-import {wishlist_state} from "../store/slices/general_slice/wishlist_slice"
+import {wishliststate} from "../store/slices/general_slice/wishlist_slice"
 import loadingGif from "../public/assets/images/circle-loader.gif"
 const Wishlistcom = () => {
   const { quantity } = useProductDetail();
   const dispatch = useDispatch();
   const addtocart = useSelector(addcart);
   console.log("addtocart", addtocart);
-  const wishlistDetails = useSelector(wishlist_state)
+  const wishlistDetails = useSelector(wishliststate)
   const [showToast, setshowToast] = useState(false);
   const [showToast1, setshowToast1] = useState(false);
   const [showErrorToast, setshowErrorToast] = useState(false);

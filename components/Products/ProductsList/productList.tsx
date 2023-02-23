@@ -15,13 +15,19 @@ const ProductList = ({
   handlePrice,
   productCount,
   isLoadMore,
+  wishlistToast,
+  setWishlistToastnew,
+  WishlistToastnew,
+  handleWishlist,
+  content,
+  setWishlistToast,
+  setContents
 }: any) => {
   const product: any = useSelector(product_state);
   console.log("////product", product);
   console.log("////count", listItems);
   const [show, setShow] = useState<any>(false);
-  const [wishlistToast, setWishlistToast] = useState(false);
-  const [WishlistToastnew, setWishlistToastnew] = useState(false);
+
 const handlemodalOpen = () => {
   setShow(true)
 }
@@ -30,15 +36,15 @@ const handlemodalclose = () => {
 }
   return (
     <>
-       <ToastNotification
+           <ToastNotification
           setShow={setWishlistToast}
           show={wishlistToast}
-          content="Product Added"
+          content={content}
         />
         <ToastNotification
           setShow={setWishlistToastnew}
           show={WishlistToastnew}
-          content="Item removed Successfully"
+          content={content}
         />
       <div className="col-lg-9">
         <div className={`${styles.sorting_bar} border-top border-bottom`}>
@@ -93,6 +99,9 @@ const handlemodalclose = () => {
                   setWishlistToast={setWishlistToast}
                   WishlistToastnew={WishlistToastnew}
                   setWishlistToastnew={setWishlistToastnew}
+                  content={content}
+                 setContents={setContents}
+                 handleWishlist={handleWishlist}
                 />
               </div>
             ))

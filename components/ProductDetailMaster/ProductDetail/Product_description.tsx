@@ -73,7 +73,7 @@ const ProductDescription = (props: any) => {
                     <div className="banner banner-video product-video br-xs text-center">
                       <div ref={sliderRef} className="keen-slider">
                         {detail.map((newdata:any, i:any) => (
-                         newdata?.slide_img[0]!==null ? (newdata?.slide_img?.map((imgdata:any, index:any) => (
+                       newdata?.slide_img?.map((imgdata:any, index:any) => (
                           <div
                             className="keen-slider__slide number-slide1 product"
                             key={index}
@@ -103,34 +103,7 @@ const ProductDescription = (props: any) => {
                               </Link>
                             </figure>
                           </div>
-                          ))): ( <div
-                          className="keen-slider__slide number-slide1 product"
-                          key={index}
-                         
-                        >
-                          <figure className="banner-media">
-                            <Image
-                              src={maximaCard }
-                              alt="banner"
-                              width={300}
-                              height={300}
-                            //   className={wordData.id == i ? "clicked" : ""}
-                              style={{ backgroundColor: "#bebebe;" }}
-                              onClick={() => handleClick(i)}
-                            />
-                            <Link href="" target="_blank">
-                              <a
-                                className="btn-play-video btn-iframe"
-                                target="_blank"
-                              >
-                                <i
-                                  className="fa fa-play play_btn"
-                                  aria-hidden="true"
-                                ></i>
-                              </a>
-                            </Link>
-                          </figure>
-                        </div>)
+                          ))
                         ))}
 
                         {loaded && instanceRef.current && (
